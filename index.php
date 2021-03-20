@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
 	<title>Forms</title>
@@ -7,7 +7,7 @@
 <body>
 	<div class="container">
 		<div class="forms">
-			<form action="https://islamcv.herokuapp.com">
+			<form action="https://islamcv.herokuapp.com/">
 				<div class="title">
 					<div class="sign_in_block">
 						<a href="#"><p class="sign_in">Sign in</p></a>
@@ -22,7 +22,7 @@
 				</div>
 				<div class="pass_wrap">
 					<label for="password" class="pass_title">Password</label>
-					<input type="password" placeholder="password" class="fpass" id="password" name="password"><br>
+					<input type="password" placeholder="password" class="fpass" id="fpass" name="password"><br>
 				</div>
 				<div class="form_button">
 					<button type="reset" class="clear_button" value="clear">Clear</button>
@@ -34,19 +34,19 @@
 	
 
 	<script>
-		
-	document.getElementById('submit_button').onclick = function(){
-		let login = document.getElementById('fname');
-		let password = document.getElementById('fpass');
-
-		if (fname == 'Islam' && fpass == qwerty123) 
-			alert("Welcome");
-		else
-			alert("Invalid password or login");
-		
-	}
-
+	
+	    document.forms[0].onsubmit = function(e){
+        let login = document.getElementById('fname').value;
+        let password = document.getElementById('fpass').value;
+ 
+        if ( login === "Islam" && password === "qwerty123") 
+            alert("Welcome");
+        else {
+            e.preventDefault();
+            alert("Invalid password or login");
+        }
+    };
+    
 	</script>
 </body>
-</head>	
 </html>
